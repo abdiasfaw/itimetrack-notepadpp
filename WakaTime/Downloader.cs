@@ -9,7 +9,7 @@ namespace WakaTime
     {
         static public void DownloadAndInstallCli()
         {
-            Logger.Debug("Downloading wakatime cli...");
+            Logger.Debug("Downloading iTimeTrack cli...");
 
             var url = WakaTimeConstants.CliUrl;
             var destinationDir = WakaTimeConstants.PluginConfigDir;
@@ -17,21 +17,21 @@ namespace WakaTime
             // clean up old wakatime-master directory
             try
             {
-                Directory.Delete(Path.Combine(destinationDir, "wakatime-master"), true);
+                Directory.Delete(Path.Combine(destinationDir, "itimetrack-master"), true);
             }
             catch { /* ignored */ }
 
             // Check for proxy setting
             var proxy = WakaTime.GetProxy();
 
-            var localZipFile = Path.Combine(destinationDir, "wakatime-cli.zip");
+            var localZipFile = Path.Combine(destinationDir, "itimetrack-cli.zip");
 
             var client = new WebClient { Proxy = proxy };
 
             // Download wakatime cli
             client.DownloadFile(url, localZipFile);
 
-            Logger.Debug("Finished downloading wakatime cli.");
+            Logger.Debug("Finished downloading iTimeTrack cli.");
 
             // Extract wakatime cli zip file
             ZipFile.ExtractToDirectory(localZipFile, destinationDir);

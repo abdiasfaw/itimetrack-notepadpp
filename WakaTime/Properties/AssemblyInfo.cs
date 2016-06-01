@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WakaTime")]
-[assembly: AssemblyDescription("WakaTime is a productivity & time tracking tool for programmers. Once the WakaTime plugin is installed, you get a dashboard with reports about your programming by time, language, project, and branch.")]
+[assembly: AssemblyTitle("iTimeTrack")]
+[assembly: AssemblyDescription("Automatically track your billable time as you work in your favorite editor")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("WakaTime")]
-[assembly: AssemblyProduct("WakaTime")]
-[assembly: AssemblyCopyright("Copyright © WakaTime 2015")]
+[assembly: AssemblyCompany("iTimeTrack")]
+[assembly: AssemblyProduct("iTimeTrack")]
+[assembly: AssemblyCopyright("Copyright © Webolize LLC 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

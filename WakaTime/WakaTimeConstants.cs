@@ -7,8 +7,8 @@ namespace WakaTime
 {
     internal static class WakaTimeConstants
     {
-        internal const string NativeName = "WakaTime";
-        internal const string PluginName = "notepadpp-wakatime";
+        internal const string NativeName = "iTimeTrack";
+        internal const string PluginName = "itimetrack-notepadpp";
         internal static string PluginVersion = string.Format("{0}.{1}.{2}", WakaTime.CoreAssembly.Version.Major, WakaTime.CoreAssembly.Version.Minor, WakaTime.CoreAssembly.Version.Build);
         internal const string EditorName = "notepadpp";
         internal static string EditorVersion
@@ -20,8 +20,9 @@ namespace WakaTime
             }
         }
 
-        internal const string CliUrl = "https://github.com/wakatime/wakatime/archive/master.zip";
-        internal const string CliFolder = @"wakatime-master\wakatime\cli.py";
+        //internal const string CliUrl = "https://github.com/itimetrack/itimetrack/archive/master.zip";
+        internal const string CliUrl = "https://github.com/itimetrack/itimetrack/archive/master.zip";
+        internal const string CliFolder = @"itimetrack-master\wakatime\cli.py";
 
         internal static string PluginConfigDir
         {
@@ -41,7 +42,7 @@ namespace WakaTime
 
             try
             {
-                var about = client.DownloadString("https://raw.githubusercontent.com/wakatime/wakatime/master/wakatime/__about__.py");
+                var about = client.DownloadString("https://raw.githubusercontent.com/itimetrack/itimetrack/master/wakatime/__about__.py");
                 var match = regex.Match(about);
 
                 if (match.Success)
@@ -53,12 +54,12 @@ namespace WakaTime
                 }
                 else
                 {
-                    Logger.Warning("Couldn't auto resolve wakatime cli version");
+                    Logger.Warning("Couldn't auto resolve iTimeTrack cli version");
                 }
             }
             catch (Exception ex)
             {
-                Logger.Error("Exception when checking current wakatime cli version: ", ex);
+                Logger.Error("Exception when checking current iTimeTrack cli version: ", ex);
             }
             return string.Empty;
         };

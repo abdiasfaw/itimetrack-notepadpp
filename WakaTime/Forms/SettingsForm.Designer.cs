@@ -106,9 +106,9 @@
             this.chkDebugMode.AutoSize = true;
             this.chkDebugMode.Location = new System.Drawing.Point(72, 73);
             this.chkDebugMode.Name = "chkDebugMode";
-            this.chkDebugMode.Size = new System.Drawing.Size(149, 19);
+            this.chkDebugMode.Size = new System.Drawing.Size(151, 19);
             this.chkDebugMode.TabIndex = 6;
-            this.chkDebugMode.Text = "Debugging WakaTime?";
+            this.chkDebugMode.Text = "Debugging iTimeTrack?";
             this.chkDebugMode.UseVisualStyleBackColor = true;
             // 
             // SettingsForm
@@ -130,7 +130,7 @@
             this.MinimizeBox = false;
             this.Name = "SettingsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WakaTime Settings";
+            this.Text = "iTimeTrack Settings";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

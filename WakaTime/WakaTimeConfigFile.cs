@@ -50,7 +50,7 @@ namespace WakaTime
         static string GetConfigFilePath()
         {
             var userHomeDir = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-            return userHomeDir + "\\.wakatime.cfg";
+            return userHomeDir + "\\.itimetrack.cfg";
         }
     }
 }

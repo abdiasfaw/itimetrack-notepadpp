@@ -43,7 +43,7 @@ namespace WakaTime
             var writer = Setup();
             if (writer == null) return;
 
-            writer.WriteLine("[Wakatime {0} {1}] {2}", Enum.GetName(level.GetType(), level), DateTime.Now.ToString("hh:mm:ss tt"), msg);            
+            writer.WriteLine("[iTimeTrack {0} {1}] {2}", Enum.GetName(level.GetType(), level), DateTime.Now.ToString("hh:mm:ss tt"), msg);            
             writer.Flush();
             writer.Close();
         }

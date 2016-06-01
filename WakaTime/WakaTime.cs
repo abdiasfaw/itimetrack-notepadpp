@@ -20,7 +20,7 @@ namespace WakaTime
         private static SettingsForm _settingsForm;
 
         private static int _idMyDlg = -1;
-        private static readonly Bitmap TbBmp = Resources.wakatime;
+        private static readonly Bitmap TbBmp = Resources.itimetrack;
 
         static readonly PythonCliParameters PythonCliParameters = new PythonCliParameters();
         private static string _lastFile;
@@ -40,7 +40,7 @@ namespace WakaTime
 
             try
             {
-                Logger.Info(string.Format("Initializing WakaTime v{0}", WakaTimeConstants.PluginVersion));
+                Logger.Info(string.Format("Initializing iTimeTrack v{0}", WakaTimeConstants.PluginVersion));
 
                 _settingsForm = new SettingsForm();
                 _settingsForm.ConfigSaved += SettingsFormOnConfigSaved;
@@ -52,18 +52,18 @@ namespace WakaTime
                 Task.Run(() => { InitializeWakaTimeAsync(); });
 
                 // add menu item
-                PluginBase.SetCommand(0, "Wakatime Settings", SettingsPopup, new ShortcutKey(false, false, false, Keys.None));
+                PluginBase.SetCommand(0, "iTimeTrack Settings", SettingsPopup, new ShortcutKey(false, false, false, Keys.None));
                 _idMyDlg = 0;
 
                 // prompt for api key if not already set
                 if (string.IsNullOrEmpty(ApiKey))
                     PromptApiKey();
 
-                Logger.Info(string.Format("Finished initializing WakaTime v{0}", WakaTimeConstants.PluginVersion));
+                Logger.Info(string.Format("Finished initializing iTimeTrack v{0}", WakaTimeConstants.PluginVersion));
             }
             catch (Exception ex)
             {
-                Logger.Error("Error initializing Wakatime", ex);
+                Logger.Error("Error initializing iTimeTrack", ex);
             }
         }
 
@@ -198,19 +198,19 @@ namespace WakaTime
             if (process.Success)
             {
                 var currentVersion = process.Error.Trim();
-                Logger.Info(string.Format("Current wakatime-cli version is {0}", currentVersion));
+                Logger.Info(string.Format("Current iTimeTrack-cli version is {0}", currentVersion));
 
-                Logger.Info("Checking for updates to wakatime-cli...");
+                Logger.Info("Checking for updates to iTimeTrack-cli...");
                 var latestVersion = WakaTimeConstants.LatestWakaTimeCliVersion();
 
                 if (currentVersion.Equals(latestVersion))
                 {
-                    Logger.Info("wakatime-cli is up to date.");
+                    Logger.Info("iTimeTrack-cli is up to date.");
                     return true;
                 }
                 else
                 {
-                    Logger.Info(string.Format("Found an updated wakatime-cli v{0}", latestVersion));
+                    Logger.Info(string.Format("Found an updated iTimeTrack-cli v{0}", latestVersion));
                 }
 
             }
@@ -262,7 +262,7 @@ namespace WakaTime
             }
             catch (Exception ex)
             {
-                Logger.Error("Exception while parsing the proxy string from WakaTime config file. No proxy will be used.", ex);
+                Logger.Error("Exception while parsing the proxy string from iTimeTrack config file. No proxy will be used.", ex);
             }
 
             return proxy;
